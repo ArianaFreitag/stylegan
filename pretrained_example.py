@@ -22,11 +22,10 @@ def main():
     # Load pre-trained network.
     url = 'Ornament-2-.pkl'
     # 'https://drive.google.com/uc?id=1MEGjdvVpUsu1jB4zrXZN7Y4kBBOzizDQ' # karras2019stylegan-ffhq-1024x1024.pkl
-    objects = []
     with (open(url, "rb")) as openfile:
         while True:
             try:
-                objects.append(pickle.load(openfile))
+                _G, _D, Gs = pickle.load(openfile)
             except EOFError:
                 break
     # with dnnlib.util.open_url(url, cache_dir=config.cache_dir) as f:
