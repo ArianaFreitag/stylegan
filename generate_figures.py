@@ -33,6 +33,7 @@ def load_Gs(url):
         while True:
             try:
                  _G, _D, Gs = pickle.load(openfile)
+                  _Gs_cache[url] = Gs
             except EOFError:
                 break
     return _Gs_cache[url]
